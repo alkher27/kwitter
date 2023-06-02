@@ -27,6 +27,8 @@ test:
  production:
    <<: *default
    adapter: postgresql
+   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+   timeout: 5000
    database: kwitter_production
    username: kwitter
    password: <%= ENV["KWITTER_DATABASE_PASSWORD"] %>
