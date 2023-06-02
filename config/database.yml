@@ -32,3 +32,4 @@ test:
    database: kwitter_production
    username: kwitter
    password: <%= ENV["KWITTER_DATABASE_PASSWORD"] %>
+   #
