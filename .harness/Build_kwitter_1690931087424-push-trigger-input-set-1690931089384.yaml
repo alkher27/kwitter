@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_kwitter_1690931087424-push-trigger-input-set
+  identifier: Build_kwitter_1690931087424pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_kwitter_1690931087424
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
