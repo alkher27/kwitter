@@ -1,0 +1,40 @@
+pipeline:
+  identifier: Build_kwitter_1690931087424
+  name: Build kwitter
+  orgIdentifier: default
+  projectIdentifier: default_project
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1690931071833
+        repoName: alkher27/kwitter
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: bundleinstall
+                  name: bundle_install
+                  spec:
+                    command: bundle install --local || bundle install
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: rake
+                  name: rake
+                  spec:
+                    command: bundle exec rake
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
